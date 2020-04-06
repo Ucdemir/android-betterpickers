@@ -4,7 +4,9 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
+
+
+import androidx.appcompat.widget.AppCompatTextView;
 
 import com.codetroopers.betterpickers.OnDialogDismissListener;
 import com.codetroopers.betterpickers.calendardatepicker.CalendarDatePickerDialogFragment;
@@ -16,14 +18,14 @@ public class SampleCalendarDateDismissListener extends BaseSampleActivity
 
     private static final String FRAG_TAG_DATE_PICKER = "fragment_date_picker_name";
 
-    private TextView mResultTextView;
+    private AppCompatTextView mResultTextView;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.text_and_button_colored);
 
-        mResultTextView = (TextView) findViewById(R.id.text);
+        mResultTextView = (AppCompatTextView) findViewById(R.id.text);
         Button button = (Button) findViewById(R.id.button);
 
         mResultTextView.setText(R.string.no_value);

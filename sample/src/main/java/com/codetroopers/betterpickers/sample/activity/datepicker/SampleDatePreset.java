@@ -4,7 +4,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
+
+
+import androidx.appcompat.widget.AppCompatTextView;
 
 import com.codetroopers.betterpickers.datepicker.DatePickerBuilder;
 import com.codetroopers.betterpickers.datepicker.DatePickerDialogFragment;
@@ -17,14 +19,14 @@ public class SampleDatePreset extends BaseSampleActivity implements DatePickerDi
     private EditText month;
     private EditText date;
     private EditText year;
-    private TextView mResultTextView;
+    private AppCompatTextView mResultTextView;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.date_preset);
 
-        mResultTextView = (TextView) findViewById(R.id.text);
+        mResultTextView = (AppCompatTextView) findViewById(R.id.text);
         Button button = (Button) findViewById(R.id.button);
         month = (EditText) findViewById(R.id.month);
         date = (EditText) findViewById(R.id.date);

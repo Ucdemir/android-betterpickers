@@ -14,7 +14,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
-import android.widget.TextView;
+
+
+import androidx.appcompat.widget.AppCompatTextView;
 
 import com.codetroopers.betterpickers.R;
 
@@ -34,7 +36,7 @@ public class NumberPicker extends LinearLayout implements Button.OnClickListener
     protected NumberView mEnteredNumber;
     protected final Context mContext;
 
-    private TextView mLabel;
+    private AppCompatTextView mLabel;
     private NumberPickerErrorTextView mError;
     private int mSign;
     private String mLabelText = "";
@@ -188,7 +190,7 @@ public class NumberPicker extends LinearLayout implements Button.OnClickListener
         mRight.setText(res.getString(R.string.number_picker_seperator));
         mLeft.setOnClickListener(this);
         mRight.setOnClickListener(this);
-        mLabel = (TextView) findViewById(R.id.label);
+        mLabel = (AppCompatTextView) findViewById(R.id.label);
         mSign = SIGN_POSITIVE;
 
         // Set the correct label state

@@ -14,7 +14,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
-import android.widget.TextView;
+
+import androidx.appcompat.widget.AppCompatTextView;
 
 import com.codetroopers.betterpickers.R;
 
@@ -31,7 +32,7 @@ public class TimePicker extends LinearLayout implements Button.OnClickListener, 
     protected TimerView mEnteredTime;
     protected final Context mContext;
 
-    private TextView mAmPmLabel;
+    private AppCompatTextView mAmPmLabel;
     private String[] mAmpm;
     private final String mNoAmPmLabel;
     private int mAmPmState;
@@ -195,7 +196,7 @@ public class TimePicker extends LinearLayout implements Button.OnClickListener, 
         }
         mLeft.setOnClickListener(this);
         mRight.setOnClickListener(this);
-        mAmPmLabel = (TextView) findViewById(R.id.ampm_label);
+        mAmPmLabel = (AppCompatTextView) findViewById(R.id.ampm_label);
         mAmPmState = AMPM_NOT_SELECTED;
         mDivider = findViewById(R.id.divider);
 

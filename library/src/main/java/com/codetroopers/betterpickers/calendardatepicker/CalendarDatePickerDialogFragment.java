@@ -21,10 +21,7 @@ import android.content.DialogInterface;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v4.app.DialogFragment;
-import android.support.v4.content.ContextCompat;
+
 import android.text.format.DateUtils;
 import android.util.Log;
 import android.util.SparseArray;
@@ -38,7 +35,13 @@ import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.widget.Button;
 import android.widget.LinearLayout;
-import android.widget.TextView;
+
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.widget.AppCompatTextView;
+import androidx.core.content.ContextCompat;
+import androidx.fragment.app.DialogFragment;
 
 import com.codetroopers.betterpickers.HapticFeedbackController;
 import com.codetroopers.betterpickers.OnDialogDismissListener;
@@ -93,11 +96,11 @@ public class CalendarDatePickerDialogFragment extends DialogFragment implements 
 
     private AccessibleDateAnimator mAnimator;
     private LinearLayout mSelectedDateLayout;
-    private TextView mDayOfWeekView;
+    private AppCompatTextView mDayOfWeekView;
     private LinearLayout mMonthAndDayView;
-    private TextView mSelectedMonthTextView;
-    private TextView mSelectedDayTextView;
-    private TextView mYearView;
+    private AppCompatTextView mSelectedMonthTextView;
+    private AppCompatTextView mSelectedDayTextView;
+    private AppCompatTextView mYearView;
     private DayPickerView mDayPickerView;
     private YearPickerView mYearPickerView;
 
@@ -231,12 +234,12 @@ public class CalendarDatePickerDialogFragment extends DialogFragment implements 
         View view = inflater.inflate(R.layout.calendar_date_picker_dialog, container, false);
 
         mSelectedDateLayout = (LinearLayout) view.findViewById(R.id.day_picker_selected_date_layout);
-        mDayOfWeekView = (TextView) view.findViewById(R.id.date_picker_header);
+        mDayOfWeekView = (AppCompatTextView) view.findViewById(R.id.date_picker_header);
         mMonthAndDayView = (LinearLayout) view.findViewById(R.id.date_picker_month_and_day);
         mMonthAndDayView.setOnClickListener(this);
-        mSelectedMonthTextView = (TextView) view.findViewById(R.id.date_picker_month);
-        mSelectedDayTextView = (TextView) view.findViewById(R.id.date_picker_day);
-        mYearView = (TextView) view.findViewById(R.id.date_picker_year);
+        mSelectedMonthTextView = (AppCompatTextView) view.findViewById(R.id.date_picker_month);
+        mSelectedDayTextView = (AppCompatTextView) view.findViewById(R.id.date_picker_day);
+        mYearView = (AppCompatTextView) view.findViewById(R.id.date_picker_year);
         mYearView.setOnClickListener(this);
 
         int listPosition = -1;

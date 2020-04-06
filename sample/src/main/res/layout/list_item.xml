@@ -11,7 +11,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:text="@string/set"/>
-    <TextView
+    <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

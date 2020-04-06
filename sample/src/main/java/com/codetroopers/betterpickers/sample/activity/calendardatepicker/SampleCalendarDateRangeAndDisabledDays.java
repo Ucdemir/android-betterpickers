@@ -4,7 +4,9 @@ import android.os.Bundle;
 import android.util.SparseArray;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
+
+
+import androidx.appcompat.widget.AppCompatTextView;
 
 import com.codetroopers.betterpickers.Utils;
 import com.codetroopers.betterpickers.calendardatepicker.CalendarDatePickerDialogFragment;
@@ -22,14 +24,14 @@ public class SampleCalendarDateRangeAndDisabledDays extends BaseSampleActivity
 
     private static final String FRAG_TAG_DATE_PICKER = "fragment_date_picker_name";
 
-    private TextView mResultTextView;
+    private AppCompatTextView mResultTextView;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.text_and_button);
 
-        mResultTextView = (TextView) findViewById(R.id.text);
+        mResultTextView = (AppCompatTextView) findViewById(R.id.text);
         Button button = (Button) findViewById(R.id.button);
 
         mResultTextView.setText(R.string.no_value);

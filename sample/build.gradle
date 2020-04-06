@@ -1,16 +1,18 @@
 apply plugin: 'com.android.application'
-apply from: 'https://raw.githubusercontent.com/shamanland/gradle-mvn-push/master/gradle-mvn-push.gradle' //contains fix for javadoc issues
+
+
 
 android {
-    compileSdkVersion Integer.parseInt(project.ANDROID_BUILD_SDK_VERSION)
-    buildToolsVersion project.ANDROID_BUILD_TOOLS_VERSION
+    compileSdkVersion 29
+    buildToolsVersion '29.0.3'
 
     defaultConfig {
         applicationId "com.codetroopers.betterpickersapp"
-        minSdkVersion Integer.parseInt(project.ANDROID_BUILD_MIN_SDK_VERSION)
-        targetSdkVersion Integer.parseInt(project.ANDROID_BUILD_TARGET_SDK_VERSION)
-        versionName project.VERSION_NAME
-        versionCode Integer.parseInt(project.VERSION_CODE)
+        minSdkVersion 16
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0.0"
+
     }
 
 
@@ -23,7 +25,8 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile project(':library')
-    compile 'joda-time:joda-time:2.9.6'
+    api fileTree(include: ['*.jar'], dir: 'libs')
+    implementation project(':library')
+    implementation 'joda-time:joda-time:2.9.6'
+    sharedGroup dependencies
 }

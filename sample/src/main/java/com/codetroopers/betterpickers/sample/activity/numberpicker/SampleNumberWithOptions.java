@@ -3,7 +3,9 @@ package com.codetroopers.betterpickers.sample.activity.numberpicker;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
+
+
+import androidx.appcompat.widget.AppCompatTextView;
 
 import com.codetroopers.betterpickers.numberpicker.NumberPickerBuilder;
 import com.codetroopers.betterpickers.numberpicker.NumberPickerDialogFragment;
@@ -23,7 +25,7 @@ public class SampleNumberWithOptions extends BaseSampleActivity
     private static final int BUTTON_TWO_REFERENCE = 1;
     private static final int BUTTON_THREE_REFERENCE = 2;
 
-    private TextView mResultTextView;
+    private AppCompatTextView mResultTextView;
     private Button mButtonSetMin;
     private Button mButtonSetMax;
 
@@ -35,7 +37,7 @@ public class SampleNumberWithOptions extends BaseSampleActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.text_and_three_buttons);
 
-        mResultTextView = (TextView) findViewById(R.id.text);
+        mResultTextView = (AppCompatTextView) findViewById(R.id.text);
         Button buttonOne = (Button) findViewById(R.id.button_one);
         mButtonSetMin = (Button) findViewById(R.id.button_two);
         mButtonSetMax = (Button) findViewById(R.id.button_three);

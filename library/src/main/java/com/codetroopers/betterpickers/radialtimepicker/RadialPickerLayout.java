@@ -22,7 +22,7 @@ import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v4.view.accessibility.AccessibilityManagerCompat;
+
 import android.text.format.DateUtils;
 import android.text.format.Time;
 import android.util.AttributeSet;
@@ -36,6 +36,8 @@ import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityManager;
 import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.FrameLayout;
+
+import androidx.core.view.accessibility.AccessibilityManagerCompat;
 
 import com.codetroopers.betterpickers.HapticFeedbackController;
 import com.codetroopers.betterpickers.R;

@@ -25,9 +25,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.support.annotation.NonNull;
-import android.support.v4.app.DialogFragment;
-import android.support.v7.widget.SwitchCompat;
+
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
@@ -55,9 +53,14 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TableLayout;
-import android.widget.TextView;
+
 import android.widget.Toast;
 import android.widget.ToggleButton;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.widget.AppCompatTextView;
+import androidx.appcompat.widget.SwitchCompat;
+import androidx.fragment.app.DialogFragment;
 
 import com.codetroopers.betterpickers.OnDialogDismissListener;
 import com.codetroopers.betterpickers.R;
@@ -354,15 +357,15 @@ public class RecurrencePickerDialogFragment extends DialogFragment implements On
     private SwitchCompat mRepeatSwitch;
 
     private EditText mInterval;
-    private TextView mIntervalPreText;
-    private TextView mIntervalPostText;
+    private AppCompatTextView mIntervalPreText;
+    private AppCompatTextView mIntervalPostText;
 
     private int mIntervalResId = -1;
 
     private Spinner mEndSpinner;
-    private TextView mEndDateTextView;
+    private AppCompatTextView mEndDateTextView;
     private EditText mEndCount;
-    private TextView mPostEndCount;
+    private AppCompatTextView mPostEndCount;
     private boolean mHidePostEndCount;
 
     private ArrayList<CharSequence> mEndSpinnerArray = new ArrayList<CharSequence>(3);
@@ -746,8 +749,8 @@ public class RecurrencePickerDialogFragment extends DialogFragment implements On
                 }
             }
         });
-        mIntervalPreText = (TextView) mView.findViewById(R.id.intervalPreText);
-        mIntervalPostText = (TextView) mView.findViewById(R.id.intervalPostText);
+        mIntervalPreText = (AppCompatTextView) mView.findViewById(R.id.intervalPreText);
+        mIntervalPostText = (AppCompatTextView) mView.findViewById(R.id.intervalPostText);
 
         mEndNeverStr = mResources.getString(R.string.recurrence_end_continously);
         mEndDateLabel = mResources.getString(R.string.recurrence_end_date_label);
@@ -774,9 +777,9 @@ public class RecurrencePickerDialogFragment extends DialogFragment implements On
                 }
             }
         });
-        mPostEndCount = (TextView) mView.findViewById(R.id.postEndCount);
+        mPostEndCount = (AppCompatTextView) mView.findViewById(R.id.postEndCount);
 
-        mEndDateTextView = (TextView) mView.findViewById(R.id.endDate);
+        mEndDateTextView = (AppCompatTextView) mView.findViewById(R.id.endDate);
         mEndDateTextView.setOnClickListener(this);
         if (mModel.endDate == null) {
             mModel.endDate = new Time(mTime);
@@ -1348,7 +1351,7 @@ public class RecurrencePickerDialogFragment extends DialogFragment implements On
                 v = convertView;
             }
 
-            TextView item = (TextView) v.findViewById(R.id.spinner_item);
+            AppCompatTextView item = (AppCompatTextView) v.findViewById(R.id.spinner_item);
             int markerStart;
             switch (position) {
                 case RecurrenceModel.END_NEVER:
@@ -1414,7 +1417,7 @@ public class RecurrencePickerDialogFragment extends DialogFragment implements On
                 v = convertView;
             }
 
-            TextView item = (TextView) v.findViewById(R.id.spinner_item);
+            AppCompatTextView item = (AppCompatTextView) v.findViewById(R.id.spinner_item);
             item.setText(mStrings.get(position));
 
             return v;

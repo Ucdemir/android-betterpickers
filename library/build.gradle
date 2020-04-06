@@ -1,17 +1,18 @@
 apply plugin: 'com.android.library'
-apply from: 'https://raw.githubusercontent.com/shamanland/gradle-mvn-push/master/gradle-mvn-push.gradle' //contains fix for javadoc issues
+apply plugin: 'com.github.dcendents.android-maven'
 
-
+group='com.github.Ucdemir'
 android {
 
-    compileSdkVersion Integer.parseInt(project.ANDROID_BUILD_SDK_VERSION)
-    buildToolsVersion project.ANDROID_BUILD_TOOLS_VERSION
+    compileSdkVersion 29
+    buildToolsVersion "29.0.3"
+
 
     defaultConfig {
-        minSdkVersion Integer.parseInt(project.ANDROID_BUILD_MIN_SDK_VERSION)
-        targetSdkVersion Integer.parseInt(project.ANDROID_BUILD_TARGET_SDK_VERSION)
-        versionName project.VERSION_NAME
-        versionCode Integer.parseInt(project.VERSION_CODE)
+        minSdkVersion 16
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
     }
 
     buildTypes {
@@ -32,10 +33,16 @@ android {
     lintOptions {
         abortOnError false
     }
+
+    compileOptions {
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
+    }
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.nineoldandroids:library:2.4.0'
-    compile 'com.android.support:appcompat-v7:25.0.1'
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.nineoldandroids:library:2.4.0'
+    sharedGroup dependencies
+
 }

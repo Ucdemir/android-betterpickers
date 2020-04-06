@@ -6,8 +6,7 @@ import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.support.v4.view.PagerAdapter;
-import android.support.v4.view.ViewPager;
+
 import android.text.format.DateFormat;
 import android.util.AttributeSet;
 import android.view.HapticFeedbackConstants;
@@ -17,7 +16,11 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
-import android.widget.TextView;
+
+
+import androidx.appcompat.widget.AppCompatTextView;
+import androidx.viewpager.widget.PagerAdapter;
+import androidx.viewpager.widget.ViewPager;
 
 import com.codetroopers.betterpickers.R;
 import com.codetroopers.betterpickers.widget.UnderlinePageIndicatorPicker;
@@ -254,7 +257,7 @@ public class DatePicker extends LinearLayout implements Button.OnClickListener,
                 View v2 = view.findViewById(R.id.second);
                 View v3 = view.findViewById(R.id.third);
                 View v4 = view.findViewById(R.id.fourth);
-                TextView header = (TextView) view.findViewById(R.id.header);
+                AppCompatTextView header = (AppCompatTextView) view.findViewById(R.id.header);
 
                 header.setText(R.string.month_c);
 
@@ -290,7 +293,7 @@ public class DatePicker extends LinearLayout implements Button.OnClickListener,
                 View v2 = view.findViewById(R.id.second);
                 View v3 = view.findViewById(R.id.third);
                 View v4 = view.findViewById(R.id.fourth);
-                TextView header = (TextView) view.findViewById(R.id.header);
+                AppCompatTextView header = (AppCompatTextView) view.findViewById(R.id.header);
 
                 header.setText(R.string.day_c);
 
@@ -332,7 +335,7 @@ public class DatePicker extends LinearLayout implements Button.OnClickListener,
                 View v2 = view.findViewById(R.id.second);
                 View v3 = view.findViewById(R.id.third);
                 View v4 = view.findViewById(R.id.fourth);
-                TextView header = (TextView) view.findViewById(R.id.header);
+                AppCompatTextView header = (AppCompatTextView) view.findViewById(R.id.header);
 
                 header.setText(R.string.year_c);
 

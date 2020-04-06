@@ -3,7 +3,9 @@ package com.codetroopers.betterpickers.sample.activity.datepicker;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
+
+
+import androidx.appcompat.widget.AppCompatTextView;
 
 import com.codetroopers.betterpickers.datepicker.DatePickerBuilder;
 import com.codetroopers.betterpickers.datepicker.DatePickerDialogFragment;
@@ -13,14 +15,14 @@ import com.codetroopers.betterpickers.sample.activity.BaseSampleActivity;
 
 public class SampleDateYearOptional extends BaseSampleActivity implements DatePickerDialogFragment.DatePickerDialogHandler {
 
-    private TextView mResultTextView;
+    private AppCompatTextView mResultTextView;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.text_and_button);
 
-        mResultTextView = (TextView) findViewById(R.id.text);
+        mResultTextView = (AppCompatTextView) findViewById(R.id.text);
         Button button = (Button) findViewById(R.id.button);
 
         mResultTextView.setText(R.string.no_value);

@@ -22,8 +22,7 @@ import android.content.DialogInterface;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.os.Bundle;
-import android.support.v4.app.DialogFragment;
-import android.support.v4.content.ContextCompat;
+
 import android.text.format.DateFormat;
 import android.util.Log;
 import android.view.KeyCharacterMap;
@@ -36,7 +35,11 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.RelativeLayout;
-import android.widget.TextView;
+
+
+import androidx.appcompat.widget.AppCompatTextView;
+import androidx.core.content.ContextCompat;
+import androidx.fragment.app.DialogFragment;
 
 import com.codetroopers.betterpickers.HapticFeedbackController;
 import com.codetroopers.betterpickers.OnDialogDismissListener;
@@ -88,14 +91,14 @@ public class RadialTimePickerDialogFragment extends DialogFragment implements On
     private HapticFeedbackController mHapticFeedbackController;
 
     private Button mDoneButton;
-    private TextView mHourView;
-    private TextView mHourSpaceView;
-    private TextView mMinuteView;
-    private TextView mMinuteSpaceView;
-    private TextView mAmPmTextView;
+    private AppCompatTextView mHourView;
+    private AppCompatTextView mHourSpaceView;
+    private AppCompatTextView mMinuteView;
+    private AppCompatTextView mMinuteSpaceView;
+    private AppCompatTextView mAmPmTextView;
     private View mAmPmHitspace;
     private RadialPickerLayout mTimePicker;
-    private TextView mTitleTextView;
+    private AppCompatTextView mTitleTextView;
     private NumberPickerErrorTextView mError;
 
     private int mSelectedColor;
@@ -312,13 +315,13 @@ public class RadialTimePickerDialogFragment extends DialogFragment implements On
         mMinutePickerDescription = res.getString(R.string.minute_picker_description);
         mSelectMinutes = res.getString(R.string.select_minutes);
 
-        mHourView = (TextView) view.findViewById(R.id.hours);
+        mHourView = (AppCompatTextView) view.findViewById(R.id.hours);
         mHourView.setOnKeyListener(keyboardListener);
-        mHourSpaceView = (TextView) view.findViewById(R.id.hour_space);
-        mMinuteSpaceView = (TextView) view.findViewById(R.id.minutes_space);
-        mMinuteView = (TextView) view.findViewById(R.id.minutes);
+        mHourSpaceView = (AppCompatTextView) view.findViewById(R.id.hour_space);
+        mMinuteSpaceView = (AppCompatTextView) view.findViewById(R.id.minutes_space);
+        mMinuteView = (AppCompatTextView) view.findViewById(R.id.minutes);
         mMinuteView.setOnKeyListener(keyboardListener);
-        mAmPmTextView = (TextView) view.findViewById(R.id.ampm_label);
+        mAmPmTextView = (AppCompatTextView) view.findViewById(R.id.ampm_label);
         mAmPmTextView.setOnKeyListener(keyboardListener);
         String[] amPmTexts = new DateFormatSymbols().getAmPmStrings();
         mAmText = amPmTexts[0];
@@ -353,7 +356,7 @@ public class RadialTimePickerDialogFragment extends DialogFragment implements On
             }
         });
 
-        mTitleTextView = (TextView) view.findViewById(R.id.time_picker_header);
+        mTitleTextView = (AppCompatTextView) view.findViewById(R.id.time_picker_header);
         if (mTitleText != null) {
             mTitleTextView.setVisibility(View.VISIBLE);
             mTitleTextView.setText(mTitleText);
@@ -407,7 +410,7 @@ public class RadialTimePickerDialogFragment extends DialogFragment implements On
 
             RelativeLayout.LayoutParams paramsSeparator = new RelativeLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
             paramsSeparator.addRule(RelativeLayout.CENTER_IN_PARENT);
-            TextView separatorView = (TextView) view.findViewById(R.id.separator);
+            AppCompatTextView separatorView = (AppCompatTextView) view.findViewById(R.id.separator);
             separatorView.setLayoutParams(paramsSeparator);
         } else {
             mAmPmTextView.setVisibility(View.VISIBLE);
@@ -455,8 +458,8 @@ public class RadialTimePickerDialogFragment extends DialogFragment implements On
         view.findViewById(R.id.ok_cancel_buttons_layout).setBackgroundColor(buttonBgColor);
         view.findViewById(R.id.time_display).setBackgroundColor(headerBgColor);
         view.findViewById(R.id.time_picker_error_holder).setBackgroundColor(headerBgColor);
-        ((TextView) view.findViewById(R.id.separator)).setTextColor(mUnselectedColor);
-        ((TextView) view.findViewById(R.id.ampm_label)).setTextColor(mUnselectedColor);
+        ((AppCompatTextView) view.findViewById(R.id.separator)).setTextColor(mUnselectedColor);
+        ((AppCompatTextView) view.findViewById(R.id.ampm_label)).setTextColor(mUnselectedColor);
         mTimePicker.setBackgroundColor(bodyBgColor);
         return view;
     }
@@ -642,7 +645,7 @@ public class RadialTimePickerDialogFragment extends DialogFragment implements On
                                        boolean announce) {
         mTimePicker.setCurrentItemShowing(index, animateCircle);
 
-        TextView labelToAnimate;
+        AppCompatTextView labelToAnimate;
         if (index == HOUR_INDEX) {
             int hours = mTimePicker.getHours();
             if (!mIs24HourMode) {

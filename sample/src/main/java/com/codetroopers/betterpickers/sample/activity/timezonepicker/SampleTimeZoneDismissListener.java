@@ -2,11 +2,14 @@ package com.codetroopers.betterpickers.sample.activity.timezonepicker;
 
 import android.content.DialogInterface;
 import android.os.Bundle;
-import android.support.v4.app.FragmentManager;
+
 import android.text.format.Time;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
+
+
+import androidx.appcompat.widget.AppCompatTextView;
+import androidx.fragment.app.FragmentManager;
 
 import com.codetroopers.betterpickers.OnDialogDismissListener;
 import com.codetroopers.betterpickers.sample.R;
@@ -20,7 +23,7 @@ import com.codetroopers.betterpickers.timezonepicker.TimeZonePickerDialogFragmen
 public class SampleTimeZoneDismissListener extends BaseSampleActivity
         implements TimeZonePickerDialogFragment.OnTimeZoneSetListener, OnDialogDismissListener {
 
-    private TextView mResultTextView;
+    private AppCompatTextView mResultTextView;
     private static final String FRAG_TAG_TIME_ZONE_PICKER = "timeZonePickerDialogFragment";
 
     @Override
@@ -28,7 +31,7 @@ public class SampleTimeZoneDismissListener extends BaseSampleActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.text_and_button);
 
-        mResultTextView = (TextView) findViewById(R.id.text);
+        mResultTextView = (AppCompatTextView) findViewById(R.id.text);
         Button button = (Button) findViewById(R.id.button);
 
         mResultTextView.setText(R.string.no_value);

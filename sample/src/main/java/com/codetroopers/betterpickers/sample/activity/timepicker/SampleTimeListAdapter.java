@@ -2,14 +2,16 @@ package com.codetroopers.betterpickers.sample.activity.timepicker;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.support.v4.app.FragmentManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ListView;
-import android.widget.TextView;
+
+
+import androidx.appcompat.widget.AppCompatTextView;
+import androidx.fragment.app.FragmentManager;
 
 import com.codetroopers.betterpickers.sample.R;
 import com.codetroopers.betterpickers.sample.activity.BaseSampleActivity;
@@ -78,7 +80,7 @@ public class SampleTimeListAdapter extends BaseSampleActivity {
         private class ViewHolder {
 
             public Button button;
-            public TextView text;
+            public AppCompatTextView text;
         }
 
         @Override
@@ -103,7 +105,7 @@ public class SampleTimeListAdapter extends BaseSampleActivity {
                 view = mInflater.inflate(R.layout.list_item, parent, false);
                 holder = new ViewHolder();
                 holder.button = (Button) view.findViewById(R.id.button);
-                holder.text = (TextView) view.findViewById(R.id.text);
+                holder.text = (AppCompatTextView) view.findViewById(R.id.text);
                 view.setTag(holder);
             } else {
                 holder = (ViewHolder) view.getTag();

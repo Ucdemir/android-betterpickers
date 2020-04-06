@@ -14,7 +14,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
-import android.widget.TextView;
+
+import androidx.appcompat.widget.AppCompatTextView;
 
 import com.codetroopers.betterpickers.R;
 
@@ -30,7 +31,7 @@ public class HmsPicker extends LinearLayout implements Button.OnClickListener, B
     protected HmsView mEnteredHms;
     protected final Context mContext;
 
-    private TextView mHoursLabel, mMinutesLabel, mSecondsLabel;
+    private AppCompatTextView mHoursLabel, mMinutesLabel, mSecondsLabel;
     private Button mSetButton;
 
     protected View mDivider;
@@ -177,9 +178,9 @@ public class HmsPicker extends LinearLayout implements Button.OnClickListener, B
         mLeft.setText(res.getString(R.string.number_picker_plus_minus));
         mLeft.setOnClickListener(this);
 
-        mHoursLabel = (TextView) findViewById(R.id.hours_label);
-        mMinutesLabel = (TextView) findViewById(R.id.minutes_label);
-        mSecondsLabel = (TextView) findViewById(R.id.seconds_label);
+        mHoursLabel = (AppCompatTextView) findViewById(R.id.hours_label);
+        mMinutesLabel = (AppCompatTextView) findViewById(R.id.minutes_label);
+        mSecondsLabel = (AppCompatTextView) findViewById(R.id.seconds_label);
         mDivider = findViewById(R.id.divider);
 
         restyleViews();

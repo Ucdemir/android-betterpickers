@@ -29,7 +29,7 @@
             android:visibility="invisible"
             android:importantForAccessibility="no" />
 
-        <TextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/hour_space"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -58,7 +58,7 @@
                 style="@style/aosp_time_label" />
             </FrameLayout>
 
-        <TextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/separator"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -70,7 +70,7 @@
             style="@style/aosp_time_label"
             android:importantForAccessibility="no" />
 
-        <TextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/minutes_space"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -105,7 +105,7 @@
             android:layout_alignParentBottom="true"
             android:layout_alignLeft="@+id/ampm_label"
             android:layout_alignRight="@+id/ampm_label" />
-        <TextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/ampm_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

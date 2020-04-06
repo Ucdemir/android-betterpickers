@@ -27,7 +27,9 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.BaseAdapter;
-import android.widget.TextView;
+
+
+import androidx.appcompat.widget.AppCompatTextView;
 
 import com.codetroopers.betterpickers.R;
 import com.codetroopers.betterpickers.timezonepicker.TimeZoneFilterTypeAdapter.OnSetFilterListener;
@@ -71,15 +73,15 @@ public class TimeZoneResultAdapter extends BaseAdapter implements OnItemClickLis
 
     static class ViewHolder {
 
-        TextView timeZone;
-        TextView timeOffset;
-        TextView location;
+        AppCompatTextView timeZone;
+        AppCompatTextView timeOffset;
+        AppCompatTextView location;
 
         static void setupViewHolder(View v) {
             ViewHolder vh = new ViewHolder();
-            vh.timeZone = (TextView) v.findViewById(R.id.time_zone);
-            vh.timeOffset = (TextView) v.findViewById(R.id.time_offset);
-            vh.location = (TextView) v.findViewById(R.id.location);
+            vh.timeZone = (AppCompatTextView) v.findViewById(R.id.time_zone);
+            vh.timeOffset = (AppCompatTextView) v.findViewById(R.id.time_offset);
+            vh.location = (AppCompatTextView) v.findViewById(R.id.location);
             v.setTag(vh);
         }
     }
@@ -280,7 +282,7 @@ public class TimeZoneResultAdapter extends BaseAdapter implements OnItemClickLis
         if (mFilteredTimeZoneIndices[position] == EMPTY_INDEX) {
             v = mInflater.inflate(R.layout.empty_time_zone_item, parent, false);
 
-            ((TextView) v.findViewById(R.id.empty_item)).setTypeface(mSansSerifLightTypeface);
+            ((AppCompatTextView) v.findViewById(R.id.empty_item)).setTypeface(mSansSerifLightTypeface);
             return v;
         }
 

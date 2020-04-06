@@ -33,7 +33,7 @@
         android:orientation="vertical"
         android:textColor="@color/date_picker_selector">
 
-        <TextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/date_picker_month"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -44,7 +44,7 @@
             android:textSize="@dimen/selected_date_month_size"
             tools:text="Jan."/>
 
-        <TextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/date_picker_day"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

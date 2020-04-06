@@ -27,7 +27,9 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Filter;
 import android.widget.Filterable;
-import android.widget.TextView;
+
+
+import androidx.appcompat.widget.AppCompatTextView;
 
 import com.codetroopers.betterpickers.R;
 
@@ -58,11 +60,11 @@ public class TimeZoneFilterTypeAdapter extends BaseAdapter implements Filterable
         int filterType;
         String str;
         int time;
-        TextView strTextView;
+        AppCompatTextView strTextView;
 
         static void setupViewHolder(View v) {
             ViewHolder vh = new ViewHolder();
-            vh.strTextView = (TextView) v.findViewById(R.id.value);
+            vh.strTextView = (AppCompatTextView) v.findViewById(R.id.value);
             v.setTag(vh);
         }
     }

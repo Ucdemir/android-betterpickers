@@ -3,8 +3,10 @@ package com.codetroopers.betterpickers.sample.activity.hmspicker;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
+
 import android.widget.Toast;
+
+import androidx.appcompat.widget.AppCompatTextView;
 
 import com.codetroopers.betterpickers.hmspicker.HmsPickerBuilder;
 import com.codetroopers.betterpickers.hmspicker.HmsPickerDialogFragment;
@@ -16,14 +18,14 @@ import com.codetroopers.betterpickers.sample.activity.BaseSampleActivity;
  */
 public class SampleHmsMultipleHandlers extends BaseSampleActivity implements HmsPickerDialogFragment.HmsPickerDialogHandlerV2 {
 
-    private TextView mResultTextView;
+    private AppCompatTextView mResultTextView;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.text_and_button);
 
-        mResultTextView = (TextView) findViewById(R.id.text);
+        mResultTextView = (AppCompatTextView) findViewById(R.id.text);
         Button button = (Button) findViewById(R.id.button);
 
         mResultTextView.setText(R.string.no_value);

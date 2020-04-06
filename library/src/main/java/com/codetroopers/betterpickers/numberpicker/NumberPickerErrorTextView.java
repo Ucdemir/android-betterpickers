@@ -6,12 +6,14 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.TextView;
+
+import androidx.appcompat.widget.AppCompatTextView;
+
 
 /**
  * User: derek Date: 6/21/13 Time: 10:37 AM
  */
-public class NumberPickerErrorTextView extends TextView {
+public class NumberPickerErrorTextView extends AppCompatTextView {
 
     private static final long LENGTH_SHORT = 3000;
 

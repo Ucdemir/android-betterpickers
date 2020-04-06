@@ -17,11 +17,12 @@
 package com.codetroopers.betterpickers.recurrencepicker;
 
 import android.content.Context;
-import android.support.v4.view.ViewCompat;
 import android.util.AttributeSet;
 import android.view.View;
 
-public class WeekButton extends android.widget.ToggleButton {
+import androidx.core.view.ViewCompat;
+
+public class WeekButton extends androidx.appcompat.widget.AppCompatToggleButton {
 
     private static int mWidth;
 

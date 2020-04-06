@@ -25,7 +25,7 @@
     android:paddingLeft="20dp"
     android:paddingRight="20dp" >
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/time_zone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -34,14 +34,14 @@
         android:maxLines="2"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/time_offset"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ellipsize="marquee"
         android:singleLine="true" />
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/location"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

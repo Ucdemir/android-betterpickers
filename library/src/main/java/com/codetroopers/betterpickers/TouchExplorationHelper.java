@@ -19,16 +19,18 @@ package com.codetroopers.betterpickers;
 import android.content.Context;
 import android.graphics.Rect;
 import android.os.Bundle;
-import android.support.v4.view.AccessibilityDelegateCompat;
-import android.support.v4.view.ViewCompat;
-import android.support.v4.view.accessibility.AccessibilityNodeInfoCompat;
-import android.support.v4.view.accessibility.AccessibilityNodeProviderCompat;
-import android.support.v4.view.accessibility.AccessibilityRecordCompat;
+
 import android.text.TextUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityManager;
+
+import androidx.core.view.AccessibilityDelegateCompat;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
+import androidx.core.view.accessibility.AccessibilityNodeProviderCompat;
+import androidx.core.view.accessibility.AccessibilityRecordCompat;
 
 import java.util.LinkedList;
 import java.util.List;

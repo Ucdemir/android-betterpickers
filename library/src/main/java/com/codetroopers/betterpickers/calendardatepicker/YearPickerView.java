@@ -20,8 +20,7 @@ import android.content.Context;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.graphics.drawable.StateListDrawable;
-import android.support.annotation.NonNull;
-import android.support.v4.content.ContextCompat;
+
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.accessibility.AccessibilityEvent;
@@ -29,7 +28,11 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.TextView;
+
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.widget.AppCompatTextView;
+import androidx.core.content.ContextCompat;
 
 import com.codetroopers.betterpickers.R;
 import com.codetroopers.betterpickers.calendardatepicker.CalendarDatePickerDialogFragment.OnDateChangedListener;
@@ -113,7 +116,7 @@ public class YearPickerView extends ListView implements OnItemClickListener, OnD
         }
     }
 
-    private int getYearFromTextView(TextView view) {
+    private int getYearFromTextView(AppCompatTextView view) {
         return Integer.valueOf(view.getText().toString());
     }
 
